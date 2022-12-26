@@ -6,3 +6,19 @@ const resetButton = document.getElementById('resetButton');
 
 let timePassed = 0;
 let interval = null;
+
+// made stopwatch display functional
+function stopwatchDisplay() {
+    timePassed++;
+
+    // formatted stopwatch display
+    let hours = Math.floor(timePassed / (60 * 60));
+    let minutes = Math.floor((timePassed - (hours * (60 * 60))) / 60);
+    let seconds = timePassed % 60;
+
+    if (seconds < 10) seconds = '0' + seconds;
+    if (minutes < 10) minutes = '0' + minutes;
+    if (hours < 10) hours = '0' + hours;
+
+    timer.innerText = `${hours}:${minutes}:${seconds}`;
+}
