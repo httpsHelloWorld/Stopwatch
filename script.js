@@ -28,7 +28,7 @@ function stopwatchDisplay() {
     timer.innerText = `${hours}:${minutes}:${seconds}`;
 }
 
-// made start button functional
+// made buttons functional
 function start() {
     if (interval) {
         return 
@@ -37,13 +37,13 @@ function start() {
     interval = setInterval(stopwatchDisplay, 1000);
 }
 
-// made stop button functional
+
 function stop() {
     clearInterval(interval);
     interval = null;
 }
 
-// give functionality to reset button
+
 function reset() {
     stop();
     timePassed = 0;
