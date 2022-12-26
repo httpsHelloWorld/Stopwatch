@@ -9,6 +9,8 @@ let interval = null;
 
 // connected buttons to stopwatch display
 startButton.addEventListener('click', start);
+stopButton.addEventListener('click', stop);
+
 
 // made stopwatch display functional
 function stopwatchDisplay() {
@@ -33,4 +35,10 @@ function start() {
     }
 
     interval = setInterval(stopwatchDisplay, 1000);
+}
+
+// made stop button functional
+function stop() {
+    clearInterval(interval);
+    interval = null;
 }
