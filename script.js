@@ -10,7 +10,7 @@ let interval = null;
 // connected buttons to stopwatch display
 startButton.addEventListener('click', start);
 stopButton.addEventListener('click', stop);
-
+resetButton.addEventListener('click', reset);
 
 // made stopwatch display functional
 function stopwatchDisplay() {
@@ -41,4 +41,11 @@ function start() {
 function stop() {
     clearInterval(interval);
     interval = null;
+}
+
+// give functionality to reset button
+function reset() {
+    stop();
+    timePassed = 0;
+    timer.innerText = '00:00:00'
 }
