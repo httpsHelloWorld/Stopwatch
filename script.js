@@ -7,6 +7,9 @@ const resetButton = document.getElementById('resetButton');
 let timePassed = 0;
 let interval = null;
 
+// connected buttons to stopwatch display
+startButton.addEventListener('click', start);
+
 // made stopwatch display functional
 function stopwatchDisplay() {
     timePassed++;
@@ -21,4 +24,13 @@ function stopwatchDisplay() {
     if (hours < 10) hours = '0' + hours;
 
     timer.innerText = `${hours}:${minutes}:${seconds}`;
+}
+
+// made start button functional
+function start() {
+    if (interval) {
+        return 
+    }
+
+    interval = setInterval(stopwatchDisplay, 1000);
 }
